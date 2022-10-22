@@ -28,56 +28,56 @@ For each pair (`fname1`, `fnamex`) of files in a time set:
 
 	This program applies the ICP transformation matrix stored in `fnamex_a_obj.xf` file to the file `fnamex_a_obj` and stores the result in `fname_tr`
 
-	For each time-series set:
+For each time-series set:
 
-	* `dynamic_roots_64.exe folder_res all_names`
+* `dynamic_roots_64.exe folder_res all_names`
 
-		This program performs analysis of the time-series set. folder_res is the name of the folder where the results of the analysis are written. all_names is the list of the file names of root reconstructions in the time series set. The program uses the files with transformation matrices and assumes the file naming convention described above to access them. The program outputs the following set of files for each time-series set:
+	This program performs analysis of the time-series set. folder_res is the name of the folder where the results of the analysis are written. all_names is the list of the file names of root reconstructions in the time series set. The program uses the files with transformation matrices and assumes the file naming convention described above to access them. The program outputs the following set of files for each time-series set:
 
-	* `reconstruction_check.txt`
+* `reconstruction_check.txt`
 
-		for each loaded root reconstruction file it contains the values of volume and surface area (computed as number of voxels and number of exposed faces of voxels). If the surface area is significantly larger than the volume it might be an indicator for an error in the reconstruction procedure. These values are not used anywhere.
+	for each loaded root reconstruction file it contains the values of volume and surface area (computed as number of voxels and number of exposed faces of voxels). If the surface area is significantly larger than the volume it might be an indicator for an error in the reconstruction procedure. These values are not used anywhere.
 
-	* `report.log`
+* `report.log`
 
-		for each pair of files (`fname1`, `fnamex`) in a set prints out the average and maximum distance between a random subset of points in fname1 and the closest points to them in the aligned reconstruction `fnamex`. If the average distance is large (>10) the file `fnamex` will be skipped when processing time-series set because of potentially bad alignment. `fname1` is the first root reconstruction in the time-series set, `fnamex` is the file with the root reconstruction for the time t>1;
+	for each pair of files (`fname1`, `fnamex`) in a set prints out the average and maximum distance between a random subset of points in fname1 and the closest points to them in the aligned reconstruction `fnamex`. If the average distance is large (>10) the file `fnamex` will be skipped when processing time-series set because of potentially bad alignment. `fname1` is the first root reconstruction in the time-series set, `fnamex` is the file with the root reconstruction for the time t>1;
 
-	* `switches.log`
+* `switches.log`
 
-		for each pair of files (`fnamex`, `fnamen`) in a set prints out the number of switch events (when a branch length is smaller than the length of a child branch). `fnamen` is the last root reconstruction in the time-series set, fnamex is the file with the root reconstruction for the time t<n;
+	for each pair of files (`fnamex`, `fnamen`) in a set prints out the number of switch events (when a branch length is smaller than the length of a child branch). `fnamen` is the last root reconstruction in the time-series set, fnamex is the file with the root reconstruction for the time t<n;
 
-	* `time.log`
+* `time.log`
 
-		for a time-series set contains information on time (in seconds) spent on analysing the time-series set, computing and printing root traits, total computation time.
+	for a time-series set contains information on time (in seconds) spent on analysing the time-series set, computing and printing root traits, total computation time.
 
-	* `fnamen_per_branch_dynamics.txt`
+* `fnamen_per_branch_dynamics.txt`
 
-		root traits computed per branch (each row) per time stamp (columns);
+	root traits computed per branch (each row) per time stamp (columns);
 
-	* `fnamen_seed_stats.txt`
+* `fnamen_seed_stats.txt`
 
-		seed statistics
+	seed statistics
 
-	* `fnamen_geod_depth.iv`
+* `fnamen_geod_depth.iv`
 
-		visual output of the geodesic depth function
+	visual output of the geodesic depth function
 
-	* `fnamen_hierarchy.iv`
+* `fnamen_hierarchy.iv`
 
-		visual output of the root hierarchy
+	visual output of the root hierarchy
 
-	* `fnamen_pp.iv`
+* `fnamen_pp.iv`
 
-		visual output of the branch decomposition structure (each branch and seed are visualized with different colors)
-		
-	* `fnamen_pp_no_seed.iv`
+	visual output of the branch decomposition structure (each branch and seed are visualized with different colors)
+	
+* `fnamen_pp_no_seed.iv`
 
-		visual output of the branch decomposition structure (each branch is visualized with different colors)
-		
-	* `fnamen_time_function.iv`
+	visual output of the branch decomposition structure (each branch is visualized with different colors)
+	
+* `fnamen_time_function.iv`
 
-		visual output of the time function
+	visual output of the time function
 
-	* `fnamen_bio_classes.iv`
+* `fnamen_bio_classes.iv`
 
-		visual output of the classification of branches into biological root classes (primary, seminal, crown, and lateral)
+	visual output of the classification of branches into biological root classes (primary, seminal, crown, and lateral)

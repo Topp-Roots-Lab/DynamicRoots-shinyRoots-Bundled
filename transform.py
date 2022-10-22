@@ -12,7 +12,7 @@ dynamicRoots="dynamicRoots\\dynamic_roots_64.exe";
 all_names=" ";
 fid_prev=" ";
 
-#print "folder_res", folder_res
+print "folder_res", folder_res
 
 
 if not os.path.exists(folder_res):
@@ -62,29 +62,3 @@ for fname in [out for out in os.listdir(folder) if out.endswith(".out")]:
 		os.system(command);
 		all_names=all_names+folder+fname.replace ( '.out', '.obj')+" ";
 	fid_prev=fid;
-
-command = "dynamicRoots\\dynamic_roots_64.exe " +  folder_res + " " + all_names;	
-print(command,"\n");
-os.system(command)
-
-stop = time.clock()
-print ("Total  running time in seconds: " + str(stop - start))
-
-folder = "./"
-folder_btw = "./btw\\"
-if not os.path.exists(folder_btw):
-    os.makedirs(folder_btw)
-
-for fname in [out for out in os.listdir(folder) if out.endswith("_a4pcs.obj")]:	
-	newfilename=os.path.join(folder_btw, fname);
-	if os.path.isfile(newfilename):
-		os.remove(newfilename);
-	os.rename(os.path.join(folder, fname), newfilename);
-	
-for fname in [out for out in os.listdir(folder) if out.endswith("_a4pcs_icp.obj")]:
-	newfilename=os.path.join(folder_btw, fname);
-	if os.path.isfile(newfilename):
-		os.remove(newfilename);
-	os.rename(os.path.join(folder, fname), os.path.join(folder_btw, fname));
-
-	
