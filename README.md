@@ -12,7 +12,7 @@ The script calls the following routines:
 For each file in the folder:
 * `out2obj.exe fname`
 
-	This converts the input fname.out format into fname.obj format
+	This converts the input `fname.out` format into `fname.obj` format
 
 For each pair (`fname1`, `fnamex`) of files in a time set:
 
@@ -44,7 +44,7 @@ For each pair (`fname1`, `fnamex`) of files in a time set:
 
 	* `switches.log`
 
-		for each pair of files (`fnamex`, `fnamen`) in a set prints out the number of switch events (when a branch length is smaller than the length of a child branch). `fnamen` is the last root reconstruction in the time-series set, `fnamex` is the file with the root reconstruction for the time t<n;
+		for each pair of files (`fnamex`, `fnamen`) in a set prints out the number of switch events (when a branch length is smaller than the length of a child branch). `fnamen` is the last root reconstruction in the time-series set, fnamex is the file with the root reconstruction for the time t<n;
 
 	* `time.log`
 
